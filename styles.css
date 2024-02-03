@@ -1,0 +1,189 @@
+/* Base styles */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, p {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1 {
+    font-size: 1.8rem; /* Example for heading size */
+}
+
+p {
+    font-size: 1rem; /* Example for paragraph size */
+}
+
+/* Media Queries for Responsive Adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+
+    nav ul {
+        padding: 0;
+        display: block;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 0;
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+    }
+    
+    /* Add more responsive styles as needed */
+}
+
+/* Larger Devices */
+@media (min-width: 601px) {
+    /* Styles for larger screens */
+}
+
+/* Touch Targets */
+button, a {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 12px;
+}
+
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, p, form, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Bubbly Theme */
+html, body {
+    height: 100%; /* Ensure full height */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    background-color: #e3f2fd;
+    padding: 5px;
+    min-height: 100vh; /* Make body at least viewport height */
+}
+
+header, main {
+    padding: 1em;
+}
+main {
+    flex: 1; /* Allows main to expand and fill available space */
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 25px;
+    border: none;
+    color: #fff;
+    background-color: #42a5f5;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #1e88e5;
+}
+
+.button.red {
+    background-color: #ef5350;
+}
+
+.button.red:hover {
+    background-color: #e53935;
+}
+
+.button.gray {
+    background-color: #bdbdbd;
+}
+
+.button.gray:hover {
+    background-color: #9e9e9e;
+}
+
+/* Responsive Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+}
+
+/* Media Queries for Responsive Adjustments */
+@media (max-width: 768px) {
+    .button {
+        padding: 10px;
+        border-radius: 20px;
+    }
+}
+
+/* Adjustments for ultra mobile-friendly responsiveness */
+@media (max-width: 480px) {
+    header, main, footer {
+        padding: 0.5em; /* Reduce padding for smaller screens */
+    }
+    
+    .button {
+        padding: 8px; /* Adjust button padding */
+        margin: 5px 0; /* Reduce margin between buttons */
+        border-radius: 15px; /* Slightly round the corners */
+    }
+
+    /* Adjust grid layout for very small screens */
+    .grid {
+        grid-gap: 5px; /* Reduce gap */
+    }
+}
+
+/* Footer adjustment */
+footer {
+    background-color: #90caf9;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+/* Ensure that there are no margins on the last element inside the footer that might be pushing it down */
+footer > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Additional styles for inputs, divs, etc. */

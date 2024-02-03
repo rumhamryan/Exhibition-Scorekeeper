@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine-Ball Match Scoring App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-md mx-auto text-center">
+        <!-- Header -->
+        <div class="bg-blue-600 text-white py-2">
+            <div class="flex justify-between px-2">
+                <div>Brian's Crew</div>
+                <div>Match 1</div>
+                <div>9/8 Degrees in Da Shade</div>
+            </div>
+        </div>
+
+        <!-- Player Info -->
+        <div class="bg-blue-300 text-white py-2">
+            <div class="flex justify-around px-2">
+                <div>Keith CS Steph</div>
+                <div>Rene' CS Baldovi</div>
+            </div>
+            <div class="flex justify-around px-2">
+                <div>0/31 Ball Points</div>
+                <div>0/31 Ball Points</div>
+            </div>
+        </div>
+
+        <!-- Player Status -->
+        <div class="bg-blue-200 text-white py-2">
+            <div class="flex justify-around px-2">
+                <div>0 Def Shots</div>
+                <div>0 Timeouts</div>
+                <div>0 Timeouts</div>
+                <div>0 Def Shots</div>
+            </div>
+        </div>
+
+        <!-- Active Player Indicator -->
+        <div class="bg-blue-800 p-4 text-white">
+            <div class="bg-blue-200 text-blue-800 mx-auto mb-2 p-2 rounded-full w-12 h-12 flex items-center justify-center">RC</div>
+            <p>Rene' CS Baldovi</p>
+            <p>Skill Level 4 - 7 seconds</p>
+        </div>
+
+        <!-- Score Input -->
+        <div class="py-4 grid grid-cols-3 gap-4 px-4">
+            <!-- Ball Buttons -->
+            <!-- Generate buttons dynamically if using a framework or server-side language -->
+            <!-- Example button -->
+            <button class="rounded-full w-16 h-16 font-bold text-xl">1</button>
+            <!-- ... Other buttons ... -->
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col py-2">
+            <div class="flex justify-between px-4 py-2">
+                <button class="bg-gray-400 text-white px-4 py-2">-</button>
+                <button class="bg-gray-400 text-white px-4 py-2">Defensive Shot</button>
+                <button class="bg-gray-400 text-white px-4 py-2">-</button>
+            </div>
+            <div class="flex justify-between px-4 py-2">
+                <button class="bg-gray-400 text-white px-4 py-2">-</button>
+                <button class="bg-gray-400 text-white px-4 py-2">Time-Out (1 Left)</button>
+                <button class="bg-gray-400 text-white px-4 py-2">-</button>
+            </div>
+            <button class="bg-gray-400 text-white px-4 py-2 my-2">Undo</button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-blue-600 text-white py-4">
+            <p>Rene' CS Baldovi's Turn Over</p>
+            <p>No innings this game</p>
+        </footer>
+    </div>
+   
+</body>
+</html>

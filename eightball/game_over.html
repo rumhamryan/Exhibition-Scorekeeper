@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Additional styles if needed */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Page content -->
+    <div class="min-h-screen flex flex-col">
+        <!-- ... other content ... -->
+        
+        <!-- Game Over Button -->
+        <div class="p-4">
+            <button onclick="openModal()" class="bg-red-600 text-white w-full py-4 rounded">
+                GAME OVER
+            </button>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="gameOverModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content rounded-lg shadow-lg">
+            <div class="text-lg font-bold p-4 border-b">
+                Game Over
+                <p class="text-gray-700 text-base">How did David Dawson end the game?</p>
+            </div>
+            <div class="p-4">
+                <ul>
+                    <li class="p-2 border-b">Made 8-Ball</li>
+                    <li class="p-2 border-b">Made 8-Ball early</li>
+                    <li class="p-2 border-b">8-Ball in wrong pocket</li>
+                    <li class="p-2 border-b">Scratched on 8-Ball</li>
+                </ul>
+                <button onclick="closeModal()" class="text-blue-600 p-2">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("gameOverModal");
+
+        // Function to open the modal
+        function openModal() {
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

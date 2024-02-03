@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APA ScoreKeeper</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+</head>
+<body>
+    <header>
+        <h1>APA ScoreKeeper</h1>
+    </header>
+    <main>
+        <div id="scoreboard" class="grid">
+            <h2>Scoreboard</h2>
+        </div>
+        <div id="game-controls" class="grid">
+            <button class="button" hx-post="/start-game" hx-target="#scoreboard">Start Match</button>
+            <button class="button" hx-post="/submit-scores" hx-target="#scoreboard">Submit Scores</button>
+            <button class="button red" hx-post="/end-game" hx-target="#scoreboard">Game Over</button>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 APA ScoreKeeper</p>
+    </footer>
+    <script src="https://unpkg.com/htmx.org"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Scoreboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Scoreboard Container -->
+    <div class="max-w-md mx-auto">
+        <!-- Match 1 -->
+        <div class="bg-white p-4 flex justify-between items-center my-2 rounded shadow">
+            <div class="flex-1">
+                <p class="font-bold">Steven Alejandro</p>
+                <p class="text-sm">Match 1</p>
+                <p class="text-xs">8 Innings</p>
+                <span class="bg-green-200 text-green-800 text-xs font-bold mr-2 px-2.5 py-0.5 rounded">WINNER</span>
+                <span class="text-xs">2 Points</span>
+            </div>
+            <div class="flex-1 text-right">
+                <p class="font-bold">Amy Huit</p>
+                <p class="text-xs">1 Point</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-xs">👈 Swipe</span>
+                <button onclick="editMatch('match1')" class="bg-red-500 text-white px-2 py-1 rounded text-xs mt-2">Edit</button>
+            </div>
+        </div>
+
+        <!-- Match 2 -->
+        <div class="bg-white p-4 flex justify-between items-center my-2 rounded shadow">
+            <div class="flex-1">
+                <p class="font-bold">Murdock Loftis</p>
+                <p class="text-sm">Match 2</p>
+                <p class="text-xs">3 Innings</p>
+                <span class="text-xs">0 Points</span>
+            </div>
+            <div class="flex-1 text-right">
+                <p class="font-bold">Kara "#1" Nord</p>
+                <p class="text-xs">2 Points</p>
+                <span class="bg-green-200 text-green-800 text-xs font-bold mr-2 px-2.5 py-0.5 rounded">WINNER</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-xs">👈 Swipe</span>
+                <button onclick="editMatch('match1')" class="bg-red-500 text-white px-2 py-1 rounded text-xs mt-2">Edit</button>
+
+            </div>
+        </div>
+
+
+    </div>
+      <script>
+        let startX;
+        let endX;
+
+        function handleTouchStart(event) {
+            startX = event.touches[0].clientX;
+        }
+
+        function handleTouchMove(event) {
+            endX = event.touches[0].clientX;
+        }
+
+        function handleTouchEnd(event, matchId) {
+            if (startX > endX) {
+                // Threshold can be set as needed for swipe sensitivity
+                if (startX - endX > 50) {
+                    editMatch(matchId);
+                }
+            }
+        }
+
+        function editMatch(matchId) {
+            // Placeholder for edit logic
+            alert(`Edit logic triggered for ${matchId}`);
+        }
+
+        document.querySelectorAll('.shadow').forEach(item => {
+            item.addEventListener('touchstart', handleTouchStart);
+            item.addEventListener('touchmove', handleTouchMove);
+            item.addEventListener('touchend', (event) => handleTouchEnd(event, item.id));
+        });
+    </script>
+</body>
+
+</html>

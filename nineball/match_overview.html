@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Scoreboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+        }
+
+        .match {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .player-info {
+            flex: 1;
+            text-align: center;
+        }
+
+        .player-name {
+            font-weight: bold;
+        }
+
+        .match-details {
+            text-align: center;
+        }
+
+        .winner {
+            color: green;
+        }
+
+        .edit-button {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .swipe-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            font-size: 0.8em;
+            background-color: #eee;
+        }
+
+        /* Additional styling can go here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Match 1 -->
+        <div class="match">
+            <div class="player-info">
+                <div class="player-name">Steven Alejandro</div>
+                <div>2 Points <span class="winner">WINNER</span></div>
+                <div>Match 1</div>
+                <div>8 Innings</div>
+            </div>
+            <div class="player-info">
+                <div class="player-name">Amy Huitt</div>
+                <div>1 Point</div>
+            </div>
+            <div class="match-details">
+                <div class="swipe-indicator">
+                    <span>👈 Swipe</span>
+                    <button onclick="editMatch('match1')" class="edit-button">Edit</button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Match 2 -->
+        <!-- Replicate the above block for each match, adjusting player names, points, and statuses accordingly -->
+
+        <!-- Additional matches would be added here following the same pattern -->
+
+    </div>
+    <script>
+        let startX;
+        let endX;
+
+        function handleTouchStart(event) {
+            startX = event.touches[0].clientX;
+        }
+
+        function handleTouchMove(event) {
+            endX = event.touches[0].clientX;
+        }
+
+        function handleTouchEnd(event, matchId) {
+            if (startX > endX) {
+                // Threshold can be set as needed for swipe sensitivity
+                if (startX - endX > 50) {
+                    editMatch(matchId);
+                }
+            }
+        }
+
+        function editMatch(matchId) {
+            // Placeholder for edit logic
+            alert(`Edit logic triggered for ${matchId}`);
+        }
+
+        document.querySelectorAll('.shadow').forEach(item => {
+            item.addEventListener('touchstart', handleTouchStart);
+            item.addEventListener('touchmove', handleTouchMove);
+            item.addEventListener('touchend', (event) => handleTouchEnd(event, item.id));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorekeeper Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function increment(id) {
+            let element = document.getElementById(id);
+            let value = parseInt(element.innerText);
+            element.innerText = value + 1;
+        }
+
+        function decrement(id) {
+            let element = document.getElementById(id);
+            let value = parseInt(element.innerText);
+            if (value > 0) {
+                element.innerText = value - 1;
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <div class="bg-blue-600 p-432 text-white font-bold">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl">🔙</a>
+                <span>Scorekeeper</span>
+                <span>RB</span>
+            </div>
+            <div class="text-center">PANDEMO MODE</div>
+        </div>
+        <div class="flex justify-between items-center p-4 bg-yellow-400 text-white">
+            <div class="text-center">
+                <p>David Dawson</p>
+                <p>🔄 Game 1</p>
+                <div class="flex justify-center gap-2">
+                    <span>0 Def Shots</span>
+                    <span>0 Timeouts</span>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>Kenneth CS Low</p>
+                <div class="flex justify-center gap-2">
+                    <span>0 Timeouts</span>
+                    <span>0 Def Shots</span>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-white text-center">
+            <p class="bg-blue-200 p-2 rounded">David Dawson Made 8-Ball 🎱</p>
+        </div>
+        <div class="flex-grow p-4 grid grid-cols-2 gap-4">
+            <div class="text-center">
+                <p>Innings</p>
+                <p id="innings" class="text-2xl">0</p>
+                <div class="flex justify-center gap-2">
+                    <button onClick="increment('innings')" class="bg-gray-200 p-2">+</button>
+                    <button onClick="decrement('innings')" class="bg-gray-200 p-2">-</button>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>Time Outs</p>
+                <p id="timeouts" class="text-2xl">0</p>
+                <div class="flex justify-center gap-2">
+                    <button onClick="increment('timeouts')" class="bg-gray-200 p-2">+</button>
+                    <button onClick="decrement('timeouts')" class="bg-gray-200 p-2">-</button>
+                </div>
+            </div>
+            <div class="text-center col-span-2">
+                <p>Defensive Shots</p>
+                <p id="defshots" class="text-2xl">0</p>
+                <div class="flex justify-center gap-2">
+                    <button onClick="increment('defshots')" class="bg-gray-200 p-2">+</button>
+                    <button onClick="decrement('defshots')" class="bg-gray-200 p-2">-</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
