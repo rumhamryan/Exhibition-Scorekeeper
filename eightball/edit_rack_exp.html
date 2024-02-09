@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #005eb2;
+  padding: 2px;
+  justify-content: start;
+  text-align: center;
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.playernames {
+    background-color: #757375;
+    padding: 2px;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div.mycontainer div {
+  width:50%;  
+  float:left;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Scorekeeper</h2>
+</div>
+
+<div class="row">
+    <div class="column">
+        <h3>Player 1</h3>
+    </div>
+</div>
+
+</body>
+</html>
