@@ -539,7 +539,19 @@ class PlayerStats:
         self.nineball_nine_on_the_snap = nineball_nine_on_the_snap
         self.nineball_break_and_run = nineball_break_and_run
         self.nineball_mini_slam = nineball_mini_slam
-
+    @staticmethod
+    def update_player_matches_won(player_name, matches_won, game_type):
+        with open("player_data.json", "r+") as file:
+            data = json.load(file)
+            if player_name in data:
+                player_data = data[player_name]
+                if game_type in player_data:
+                    player_data[game_type]["eightball_matches_won"] += matches_won
+                    file.seek(0)
+                    json.dump(data, file, indent=4)
+                    file.truncate()
+                    return True
+            return False
     def create_json_file_player_entry(self):
         """This function will create new entries for each player in the match IF, they don't already have an entry in the player_data.json"""
         

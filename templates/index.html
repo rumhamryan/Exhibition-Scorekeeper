@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorekeeper</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+</head>
+<body>
+    <h1>Scorekeeper</h1>
+
+    <section>
+        <h2>Create Player Profile</h2>
+        <form hx-post="http://192.168.123.247:5000/player/create" hx-target="#response" hx-swap="outerHTML">
+            <input type="text" name="player_name" placeholder="Player Name" required>
+            <button type="submit">Create Player</button>
+        </form>
+    </section>
+    <div id="response"></div>
+
+    <section>
+      <h1>Start 8-Ball Game</h1>
+      <form hx-post="/game/start" hx-target="#game-status" hx-swap="outerHTML">
+          <select name="player1" required>
+              {% for player in players %}
+              <option value="{{ player }}">{{ player }}</option>
+              {% endfor %}
+          </select>
+          <select name="player2" required>
+              {% for player in players %}
+              <option value="{{ player }}">{{ player }}</option>
+              {% endfor %}
+          </select>
+          <button type="submit">Start Game</button>
+      </form>
+      <div id="game-status"></div>
+    </section>
+
+</html>
